@@ -29,31 +29,52 @@ class _LoginPageState extends State<LoginPage> {
                       height: 200,
                       child: Image.asset('assets/images/logo.png')),
                   Container(height: 20),
-                  TextField(
-                      onChanged: (text) {
-                        email = text;
-                      },
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                          labelText: 'Email', border: OutlineInputBorder())),
-                  TextField(
-                      onChanged: (text) {
-                        password = text;
-                      },
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          labelText: 'Password', border: OutlineInputBorder())),
-                  SizedBox(height: 15),
-                  RaisedButton(
-                    onPressed: () {
-                      if (email == 'francis@teste.com' && password == '123') {
-                        Navigator.of(context).pushReplacementNamed('/home');
-                      } else {
-                        print('login invalido');
-                      }
-                    },
-                    child: Text('Entrar'),
-                  )
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 12, right: 12, top: 20, bottom: 12),
+                      child: Column(
+                        children: [
+                          TextField(
+                              onChanged: (text) {
+                                email = text;
+                              },
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                  labelText: 'Email',
+                                  border: OutlineInputBorder())),
+                          TextField(
+                              onChanged: (text) {
+                                password = text;
+                              },
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                  labelText: 'Password',
+                                  border: OutlineInputBorder())),
+                          SizedBox(height: 15),
+                          RaisedButton(
+                            color: Colors.red,
+                            textColor: Colors.white,
+                            onPressed: () {
+                              if (email == 'francis@teste.com' &&
+                                  password == '123') {
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/home');
+                              } else {
+                                print('login invalido');
+                              }
+                            },
+                            child: Container(
+                                width: double.infinity,
+                                child: Text(
+                                  'Entrar',
+                                  textAlign: TextAlign.center,
+                                )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
