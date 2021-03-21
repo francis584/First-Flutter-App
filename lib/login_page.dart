@@ -43,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: InputDecoration(
                                   labelText: 'Email',
                                   border: OutlineInputBorder())),
+                          SizedBox(height: 15),
                           TextField(
                               onChanged: (text) {
                                 password = text;
